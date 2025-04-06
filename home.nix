@@ -79,6 +79,9 @@
       grep = "grep -i";
       ccp = "xclip -sel clip";
     };
+    sessionVariables = {
+      GOPATH = "$HOME/.go";
+    };
     initExtra = ''
       HISTDUP=erase
       setopt INC_APPEND_HISTORY
