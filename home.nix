@@ -89,6 +89,10 @@
       EDITOR = "nvim";
     };
     initExtra = ''
+      # use bash word style
+      autoload -U select-word-style
+      select-word-style bash
+
       HISTDUP=erase
       setopt INC_APPEND_HISTORY
       setopt HIST_FIND_NO_DUPS
@@ -98,6 +102,9 @@
       # load plugins      
       source ${pkgs.zsh-history-substring-search}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+
+      # bind alt+backspace
+      bindkey '^[^?' backward-kill-word
 
       # bind arrow left-right
       bindkey "^[[1;5C" forward-word
