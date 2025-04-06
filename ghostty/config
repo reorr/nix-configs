@@ -1,0 +1,27 @@
+theme = light:rose-pine-dawn,dark:rose-pine
+
+unfocused-split-opacity = 0.8
+
+font-family = JetBrains Mono
+font-style = SemiBold
+font-style-bold = ExtraBold
+font-style-italic = Semibold Italic
+font-style-bold-italic = ExtraBold Italic
+font-size = 13
+font-feature = -calt
+
+window-padding-x = 12
+window-padding-y = 8
+window-decoration = false
+window-theme = ghostty
+
+gtk-titlebar = false
+gtk-tabs-location = bottom
+adw-toolbar-style = flat
+window-decoration = client
+
+keybind = ctrl+shift+up=goto_split:top
+keybind = ctrl+shift+left=goto_split:left
+keybind = ctrl+shift+down=goto_split:bottom
+keybind = ctrl+shift+right=goto_split:right
+keybind = ctrl+alt+a=toggle_tab_overview
