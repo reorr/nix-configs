@@ -25,6 +25,8 @@
     vscode
     nodejs_22
     go
+    gopls
+    delve
     httpie
     neovim
     gcc
