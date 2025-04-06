@@ -60,6 +60,7 @@
 
     # chat
     vesktop
+    telegram-desktop
 
     # downloader
     yt-dlp
