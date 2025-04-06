@@ -58,6 +58,9 @@
     zsh-history-substring-search
     zsh-fzf-tab
 
+    # chat
+    vesktop
+
     # downloader
     yt-dlp
     gallery-dl
