@@ -27,6 +27,8 @@
     go
     httpie
     neovim
+    gcc
+    gnumake
 
     # utils
     fzf
@@ -44,6 +46,7 @@
     xclip
     gnome-power-manager
     lsof
+    ripgrep
 
     # multimedia
     mpv
@@ -61,6 +64,7 @@
   # Other config raw file
   home.file.".config/ghostty/config".source = ./ghostty/config;
   home.file.".config/containers".source = ./containers;
+  home.file.".config/nvim".source = ./nvim;
 
   programs.zsh = {
     enable = true;
