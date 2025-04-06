@@ -196,25 +196,5 @@
     };
   };
 
-  programs.vscode = {
-    enable = true;
-
-    userSettings = {
-      update.mode = "none";
-      window.zoomLevel = 0;
-
-      terminal.integrated.shell.linux = "${pkgs.zsh}/bin/zsh";
-
-      editor = {
-        fontFamily =
-          "'JetbrainsMono Nerd Font', 'monospace', monospace, 'Droid Sans Fallback'";
-        fontSize = 16;
-        fontLigatures = false;
-        inlineSuggest.enabled = true;
-        bracketPairColorization.enabled = true;
-      };
-    };
-  };
-
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 }
