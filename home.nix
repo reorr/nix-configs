@@ -110,6 +110,9 @@
     userEmail = "hasbeeazam@gmail.com";
     aliases = {
       co = "checkout";
+      s = "status";
+      pl = "pull";
+      ps = "push";
     };
   };
 
