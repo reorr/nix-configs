@@ -18,7 +18,6 @@
 
   home.packages = with pkgs; [
     # misc
-    keepassxc
     htop
 
     # dev
