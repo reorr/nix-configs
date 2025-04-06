@@ -26,6 +26,7 @@
     nodejs_22
     go
     httpie
+    neovim
 
     # utils
     fzf
@@ -81,6 +82,7 @@
     };
     sessionVariables = {
       GOPATH = "$HOME/.go";
+      EDITOR = "nvim";
     };
     initExtra = ''
       HISTDUP=erase
