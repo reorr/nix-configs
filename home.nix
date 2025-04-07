@@ -75,9 +75,20 @@
   ];
 
   # Other config raw file
-  home.file.".config/ghostty/config".source = ./ghostty/config;
-  home.file.".config/containers".source = ./containers;
-  home.file.".config/nvim".source = ./nvim;
+  home.file = {
+    ghostty = {
+      source = ./dotfiles/ghostty;
+      target = ".config/ghostty";
+    };
+    containers = {
+      source = ./dotfiles/containers;
+      target = ".config/containers";
+    };
+    nvim = {
+      source = ./dotfiles/nvim;
+      target = ".config/nvim";
+    };
+  };
 
   programs.zsh = {
     enable = true;
