@@ -88,6 +88,10 @@
       source = ./dotfiles/nvim;
       target = ".config/nvim";
     };
+    tmux = {
+      source = ./dotfiles/tmux;
+      target = ".config/tmux";
+    };
   };
 
   programs.zsh = {
