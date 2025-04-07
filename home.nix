@@ -30,6 +30,9 @@
     neovim
     gcc
     gnumake
+    redis
+    redisinsight
+    mariadb
 
     # utils
     fzf
