@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+tmux set -g @rose_pine_variant 'dawn' &&
+tmux source ~/.config/tmux/tmux.conf

@@ -60,6 +60,7 @@
     # gnome
     dconf-editor
     gnomeExtensions.switcher
+    gnomeExtensions.night-theme-switcher
     gnome-power-manager
 
     # chat
@@ -91,6 +92,14 @@
     tmux = {
       source = ./dotfiles/tmux;
       target = ".config/tmux";
+    };
+    swid = {
+      source = ./bin/swid;
+      target = ".local/bin/swid";
+    };
+    swin = {
+      source = ./bin/swin;
+      target = ".local/bin/swin";
     };
   };
 
@@ -216,6 +225,7 @@
       disable-user-extensions = false;
       enabled-extensions = with pkgs.gnomeExtensions; [
         switcher.extensionUuid
+        night-theme-switcher.extensionUuid
       ];
       favorite-apps = [
         "org.gnome.Epiphany.desktop"
@@ -230,6 +240,11 @@
       font-size = lib.hm.gvariant.mkUint32 16;
       icon-size = lib.hm.gvariant.mkUint32 16;
     };
+    "org/gnome/shell/extensions/nightthemeswitcher/commands" = {
+      enabled = true;
+      sunrise = "swid";
+      sunset = "swin";
+    };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       name = "Ghostty";
       command = "ghostty";
@@ -238,6 +253,9 @@
   };
 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
+  home.sessionPath = [
+    "$HOME/.local/bin/"
+  ];
 
   home.activation = {
     linkDesktopApplications = {
