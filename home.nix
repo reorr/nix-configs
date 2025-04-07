@@ -45,7 +45,6 @@
     gnupg
     tmux
     xclip
-    gnome-power-manager
     lsof
     ripgrep
     desktop-file-utils
@@ -57,6 +56,11 @@
     starship
     zsh-history-substring-search
     zsh-fzf-tab
+
+    # gnome
+    dconf-editor
+    gnomeExtensions.switcher
+    gnome-power-manager
 
     # chat
     vesktop
@@ -194,12 +198,22 @@
       experimental-features = ["scale-monitor-framebuffer"];
     };
     "org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = with pkgs.gnomeExtensions; [
+        switcher.extensionUuid
+      ];
       favorite-apps = [
         "org.gnome.Epiphany.desktop"
         "app.zen_browser.zen.desktop"
         "org.gnome.Nautilus.desktop"
         "com.mitchellh.ghostty.desktop"
       ];
+    };
+    "org/gnome/shell/extensions/switcher" = {
+      show-switcher = ["<Super>space"];
+      max-width-percentage = lib.hm.gvariant.mkUint32 30;
+      font-size = lib.hm.gvariant.mkUint32 16;
+      icon-size = lib.hm.gvariant.mkUint32 16;
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       name = "Ghostty";
