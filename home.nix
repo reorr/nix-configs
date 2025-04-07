@@ -93,6 +93,10 @@
       source = ./dotfiles/tmux;
       target = ".config/tmux";
     };
+    avatar = {
+      source = ./dotfiles/avatar.jpg;
+      target = ".face";
+    };
     swid = {
       source = ./bin/swid;
       target = ".local/bin/swid";
