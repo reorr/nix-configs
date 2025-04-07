@@ -75,7 +75,9 @@
     gallery-dl
 
     # browser
-    google-chrome
+    (google-chrome.override {
+      commandLineArgs = "--enable-features=TouchpadOverscrollHistoryNavigation";
+    })
   ];
 
   # Other config raw file
