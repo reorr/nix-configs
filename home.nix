@@ -65,6 +65,9 @@
     # downloader
     yt-dlp
     gallery-dl
+
+    # browser
+    google-chrome
   ];
 
   # Other config raw file
