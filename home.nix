@@ -99,6 +99,10 @@
       source = ./dotfiles/tmux;
       target = ".config/tmux";
     };
+    gtk4 = {
+      source = ./dotfiles/gtk-4.0;
+      target = ".config/gtk-4.0";
+    };
     avatar = {
       source = ./dotfiles/avatar.jpg;
       target = ".face";

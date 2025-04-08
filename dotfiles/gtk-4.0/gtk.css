@@ -1,0 +1,18 @@
+:root {
+  --window-bg-color: color-mix(in oklab, var(--accent-color), var(--view-bg-color) 90%);
+  --window-fg-color: color-mix(in oklab, var(--accent-color), var(--view-fg-color) 90%);
+}
+
+.sidebar-pane {
+  background-color: color-mix(in oklab, var(--accent-color), var(--view-bg-color) 85%);
+}
+
+.top-bar {
+  background-color: color-mix(in oklab, var(--accent-color), var(--view-bg-color) 85%);
+}
+
+.nautilus-grid-view,
+.nautilus-list-view {
+	background-color: color-mix(in oklab, var(--accent-color), var(--view-bg-color) 90%);
+}
+
