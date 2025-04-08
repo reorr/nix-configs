@@ -51,6 +51,7 @@
     lsof
     ripgrep
     desktop-file-utils
+    file
 
     # multimedia
     mpv
