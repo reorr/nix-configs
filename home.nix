@@ -103,6 +103,10 @@
       source = ./dotfiles/avatar.jpg;
       target = ".face";
     };
+    background = {
+      source = ./dotfiles/bg.jpg;
+      target = ".config/background";
+    };
     swid = {
       source = ./bin/swid;
       target = ".local/bin/swid";
@@ -215,6 +219,10 @@
       move-to-workspace-4 = ["<Super><Shift>4"];
       move-to-workspace-5 = ["<Super><Shift>5"];
       move-to-workspace-6 = ["<Super><Shift>6"];
+    };
+    "org/gnome/desktop/background" = {
+      picture-uri = "file:///home/botol/.config/background";
+      picture-uri-dark = "file:///home/botol/.config/background";
     };
     "org/gnome/shell/keybindings" = {
       switch-to-application-1 = [];
