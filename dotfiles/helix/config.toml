@@ -1,0 +1,23 @@
+#theme = "flexoki-dark"
+[theme]
+#light = "term16_light"
+#dark = "term16_dark"
+light = "flexoki-light"
+dark = "flexoki-dark"
+
+[editor.statusline]
+left = ["spacer", "separator", "spacer", "file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["spinner", "spacer", "version-control", "spacer", "diagnostics", "register", "position", "file-encoding", "file-line-ending", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+separator = ""
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.indent-guides]
+render = true
+character = "▏"

@@ -894,11 +894,25 @@ require('lazy').setup({
   },
 
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    'kepano/flexoki-neovim',
+    name = 'flexoki',
     priority = 1000,
-    init = function()
-      vim.cmd 'colorscheme rose-pine'
+    config = function()
+      local function system_is_dark()
+        if vim.fn.has 'mac' == 0 then
+          return false
+        end
+        return vim.fn.system({ 'defaults', 'read', '-g', 'AppleInterfaceStyle' }):match 'Dark' ~= nil
+      end
+
+      local function apply_flexoki()
+        local mode = system_is_dark() and 'dark' or 'light'
+        vim.o.background = mode
+        vim.cmd('colorscheme flexoki-' .. mode)
+      end
+
+      apply_flexoki()
+      vim.api.nvim_create_autocmd('FocusGained', { callback = apply_flexoki })
     end,
   },
 

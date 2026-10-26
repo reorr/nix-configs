@@ -1,8 +1,8 @@
-theme = light:rose-pine-dawn,dark:rose-pine
+theme = light:Flexoki Light,dark:Flexoki Dark
 
 unfocused-split-opacity = 0.8
 
-font-family = JetBrains Mono
+font-family = Maple Mono NF
 font-style = SemiBold
 font-style-bold = ExtraBold
 font-style-italic = Semibold Italic
