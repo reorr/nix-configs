@@ -55,14 +55,15 @@ size = 16.0
 bottom = 0.0
 left = 0.0
 right = 0.0
-top = 0.0
+# Reserve space for SketchyBar (40px bar at the top).
+top = 40.0
 
 [general]
 animationsEnabled = false
 defaultLayoutType = "niri"
 hotkeysEnabled = true
 hyperKeyModifiers = "Control+Option+Shift+Command"
-ipcEnabled = false
+ipcEnabled = true
 preventSleepEnabled = false
 systemHyperTrigger = "None"
 updateChecksEnabled = true

@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+
+# Layout/style adapted from khaneliman/dotfiles, recolored to Flexoki.
+
+source "$HOME/.config/sketchybar/colors.sh"
+
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+
+FONT=".SF NS"
+NERD_FONT="Maple Mono NF"
+PADDINGS=4
+
+sketchybar --bar \
+  position=top \
+  height=40 \
+  blur_radius=30 \
+  color="$BASE" \
+  corner_radius=0 \
+  margin=0 \
+  notch_width=0 \
+  padding_left=16 \
+  padding_right=12 \
+  shadow=off \
+  sticky=on \
+  topmost=off \
+  y_offset=0
+
+sketchybar --default \
+  updates=when_shown \
+  icon.color="$TEXT" \
+  icon.font="$NERD_FONT:Bold:16.0" \
+  icon.padding_left="$PADDINGS" \
+  icon.padding_right="$PADDINGS" \
+  label.color="$TEXT" \
+  label.font="$FONT:Bold:13.0" \
+  label.padding_left="$PADDINGS" \
+  label.padding_right="$PADDINGS" \
+  background.corner_radius=8 \
+  background.height=28 \
+  background.padding_left=2 \
+  background.padding_right=2
+
+# --- left -------------------------------------------------------------------
+sketchybar --add item front_app left \
+  --set front_app \
+    icon.drawing=off \
+    label.padding_left=6 \
+    label.padding_right=6 \
+    update_freq=2 \
+    script="$PLUGIN_DIR/refresh.sh"
+
+sketchybar --add item divider left \
+  --set divider \
+    icon.drawing=off \
+    label="|" \
+    label.color="$SURFACE" \
+    label.padding_left=2 \
+    label.padding_right=6
+
+for i in 1 2 3 4 5 6 7 8 9; do
+  sketchybar --add item "ws.$i" left \
+    --set "ws.$i" \
+      drawing=off \
+      icon.drawing=off \
+      label.color="$SUBTEXT" \
+      label.padding_left=7 \
+      label.padding_right=7 \
+      background.drawing=off \
+      background.color="$ACCENT" \
+      click_script="omniwmctl command switch-workspace $i"
+done
+
+# --- right ------------------------------------------------------------------
+sketchybar --add item clock right \
+  --set clock \
+    icon.drawing=off \
+    label.color="$SUBTEXT" \
+    label.padding_left=6 \
+    label.padding_right=6 \
+    update_freq=30 \
+    script="$PLUGIN_DIR/clock.sh"
+
+sketchybar --add item wifi right \
+  --set wifi \
+    icon=$'\xEF\x87\xAB' \
+    label.drawing=off \
+    update_freq=30 \
+    script="$PLUGIN_DIR/wifi.sh"
+
+sketchybar --add item battery right \
+  --set battery \
+    icon=$'\xEF\x89\x80' \
+    label.color="$SUBTEXT" \
+    update_freq=60 \
+    script="$PLUGIN_DIR/battery.sh"
+
+# Prime all scripts once instead of waiting for their update_freq tick.
+"$PLUGIN_DIR/clock.sh"
+"$PLUGIN_DIR/battery.sh"
+"$PLUGIN_DIR/wifi.sh"
+"$PLUGIN_DIR/refresh.sh"
+
+sketchybar --update

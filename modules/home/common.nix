@@ -76,6 +76,7 @@ in
     httpie
     iperf3
     just
+    jq
     jwt-cli
     redis
     uv
