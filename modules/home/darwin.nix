@@ -13,5 +13,6 @@
     # ".config/tmux/tmux.conf".source = ../../dotfiles/tmux/tmux.conf;
     ".config/nvim".source = ../../dotfiles/nvim;
     ".config/containers".source = ../../dotfiles/containers;
+    ".config/omniwm/settings.toml".source = ../../dotfiles/omniwm/settings.toml;
   };
 }
