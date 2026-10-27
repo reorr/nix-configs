@@ -91,13 +91,29 @@ sketchybar --add item time right \
     update_freq=30 \
     script="$PLUGIN_DIR/time.sh"
 
+sketchybar --add item div.time right \
+  --set div.time \
+    icon.drawing=off \
+    label="|" \
+    label.color="$SURFACE" \
+    label.padding_left=2 \
+    label.padding_right=6
+
 sketchybar --add item wifi right \
   --set wifi \
     icon=$'\xEF\x87\xAB' \
     icon.color="$ACCENT" \
     label.color="$SUBTEXT" \
-    update_freq=30 \
+    update_freq=10 \
     script="$PLUGIN_DIR/wifi.sh"
+
+sketchybar --add item div.wifi right \
+  --set div.wifi \
+    icon.drawing=off \
+    label="|" \
+    label.color="$SURFACE" \
+    label.padding_left=2 \
+    label.padding_right=6
 
 sketchybar --add item battery right \
   --set battery \
