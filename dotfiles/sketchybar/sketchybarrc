@@ -40,23 +40,7 @@ sketchybar --default \
   background.padding_left=2 \
   background.padding_right=2
 
-# --- left -------------------------------------------------------------------
-sketchybar --add item front_app left \
-  --set front_app \
-    icon.drawing=off \
-    label.padding_left=6 \
-    label.padding_right=6 \
-    update_freq=2 \
-    script="$PLUGIN_DIR/refresh.sh"
-
-sketchybar --add item divider left \
-  --set divider \
-    icon.drawing=off \
-    label="|" \
-    label.color="$SURFACE" \
-    label.padding_left=2 \
-    label.padding_right=6
-
+# --- left: workspaces | window app name -------------------------------------
 for i in 1 2 3 4 5 6 7 8 9; do
   sketchybar --add item "ws.$i" left \
     --set "ws.$i" \
@@ -70,32 +54,62 @@ for i in 1 2 3 4 5 6 7 8 9; do
       click_script="omniwmctl command switch-workspace $i"
 done
 
-# --- right ------------------------------------------------------------------
-sketchybar --add item clock right \
-  --set clock \
+sketchybar --add item divider left \
+  --set divider \
+    icon.drawing=off \
+    label="|" \
+    label.color="$SURFACE" \
+    label.padding_left=2 \
+    label.padding_right=6
+
+sketchybar --add item front_app left \
+  --set front_app \
+    icon.drawing=off \
+    label.padding_left=6 \
+    label.padding_right=6 \
+    update_freq=2 \
+    script="$PLUGIN_DIR/refresh.sh"
+
+# --- right: battery | wifi | time | date ------------------------------------
+# Added right-to-left, so visual order is battery, wifi, time, date.
+sketchybar --add item date right \
+  --set date \
     icon.drawing=off \
     label.color="$SUBTEXT" \
     label.padding_left=6 \
     label.padding_right=6 \
+    update_freq=300 \
+    script="$PLUGIN_DIR/date.sh"
+
+sketchybar --add item time right \
+  --set time \
+    icon.drawing=off \
+    label.font="$FONT:Bold:15.0" \
+    label.color="$ACCENT" \
+    label.padding_left=6 \
+    label.padding_right=6 \
     update_freq=30 \
-    script="$PLUGIN_DIR/clock.sh"
+    script="$PLUGIN_DIR/time.sh"
 
 sketchybar --add item wifi right \
   --set wifi \
     icon=$'\xEF\x87\xAB' \
-    label.drawing=off \
+    icon.color="$ACCENT" \
+    label.color="$SUBTEXT" \
     update_freq=30 \
     script="$PLUGIN_DIR/wifi.sh"
 
 sketchybar --add item battery right \
   --set battery \
     icon=$'\xEF\x89\x80' \
+    icon.color="$ACCENT" \
     label.color="$SUBTEXT" \
     update_freq=60 \
     script="$PLUGIN_DIR/battery.sh"
 
 # Prime all scripts once instead of waiting for their update_freq tick.
-"$PLUGIN_DIR/clock.sh"
+"$PLUGIN_DIR/time.sh"
+"$PLUGIN_DIR/date.sh"
 "$PLUGIN_DIR/battery.sh"
 "$PLUGIN_DIR/wifi.sh"
 "$PLUGIN_DIR/refresh.sh"
