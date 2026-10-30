@@ -47,7 +47,6 @@
       "incus"
       "libpq@16"
       "lsusb"
-      "lxc"
       "mise"
       "mole"
       "openjdk@21"
