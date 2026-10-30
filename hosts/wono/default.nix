@@ -72,6 +72,7 @@
       "postman"
       "tether"
       "tinycast"
+      "utm"
       "wifiman"
       "wireshark-app"
     ];
