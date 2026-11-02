@@ -52,7 +52,7 @@
       "openjdk@21"
       "pgcli"
       "php-cs-fixer"
-      "php@8.4"
+      "php@8.3"
       "rtk"
       "anomalyco/tap/opencode-v2"
       "rjyo/moshi/moshi-hook"
