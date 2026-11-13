@@ -56,6 +56,7 @@
       "rtk"
       "anomalyco/tap/opencode-v2"
       "rjyo/moshi/moshi-hook"
+      "wakeonlan"
     ];
     casks = [
       "bruno"
