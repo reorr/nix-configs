@@ -19,6 +19,12 @@ blue = 0.24307489395141602
 green = 0.2196735441684723
 red = 0.8784769773483276
 
+[borders.darkColor]
+alpha = 1.0
+blue = 0.24307489395141602
+green = 0.2196735441684723
+red = 0.8784769773483276
+
 [borders.glow]
 enabled = true
 opacity = 0.75
