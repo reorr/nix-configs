@@ -77,6 +77,7 @@ in
     iperf3
     just
     jq
+    matugen
     jwt-cli
     redis
     uv

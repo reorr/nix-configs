@@ -1,0 +1,7 @@
+# Wallpaper-derived accent for sketchybar. Generated file is sourced by colors.sh.
+[config]
+prefer = "saturation"
+
+[templates.sketchybar]
+input_path = "~/.config/matugen/sketchybar-colors.tmpl"
+output_path = "~/.cache/sketchybar/colors.sh"

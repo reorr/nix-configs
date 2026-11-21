@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   system.primaryUser = "ulatbulu";
@@ -25,6 +25,21 @@
     });
     # Config lives in ~/.config/sketchybar (HM). Empty `config` => not managed here.
     extraPackages = [ pkgs.jq ];
+  };
+
+  # Re-theme sketchybar when wallpaper changes; also runs at login.
+  launchd.user.agents.sketchybar-wallpaper-colors = {
+    path = [ pkgs.matugen "/run/current-system/sw/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" ];
+    command = "${config.users.users.ulatbulu.home}/.config/sketchybar/wallpaper-colors.sh";
+    serviceConfig = {
+      RunAtLoad = true;
+      WatchPaths = [
+        "${config.users.users.ulatbulu.home}/Library/Application Support/com.apple.wallpaper/Store"
+        "${config.users.users.ulatbulu.home}/Library/Application Support/com.apple.wallpaper/Store/Index.plist"
+      ];
+      ThrottleInterval = 2;
+      LimitLoadToSessionType = "Aqua";
+    };
   };
 
   homebrew = {

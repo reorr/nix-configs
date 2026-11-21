@@ -15,5 +15,6 @@
     ".config/containers".source = ../../dotfiles/containers;
     ".config/omniwm/settings.toml".source = ../../dotfiles/omniwm/settings.toml;
     ".config/sketchybar".source = ../../dotfiles/sketchybar;
+    ".config/matugen".source = ../../dotfiles/matugen;
   };
 }
