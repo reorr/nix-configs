@@ -10,6 +10,9 @@
     home = "/Users/ulatbulu";
   };
 
+  # Touch ID for sudo (nix-darwin manages /etc/pam.d/sudo_local).
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   services.sketchybar = {
     enable = true;
     # 2.24.0 mispositions the bar under the menu bar on macOS 26 external displays;
