@@ -81,6 +81,7 @@
       "dbeaver-community"
       "dbx"
       "devtoys"
+      "font-gabarito"
       "font-maple-mono"
       "font-maple-mono-nf"
       "font-maple-mono-nf-cn"

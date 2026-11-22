@@ -6,7 +6,7 @@ source "$HOME/.config/sketchybar/colors.sh"
 
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-FONT=".SF NS"
+FONT="Gabarito"
 NERD_FONT="Maple Mono NF"
 PADDINGS=4
 
@@ -32,7 +32,7 @@ sketchybar --default \
   icon.padding_left="$PADDINGS" \
   icon.padding_right="$PADDINGS" \
   label.color="$TEXT" \
-  label.font="$FONT:Bold:13.0" \
+  label.font="$FONT:Bold:15.0" \
   label.padding_left="$PADDINGS" \
   label.padding_right="$PADDINGS" \
   background.corner_radius=8 \
@@ -84,7 +84,7 @@ sketchybar --add item date right \
 sketchybar --add item time right \
   --set time \
     icon.drawing=off \
-    label.font="$FONT:Bold:15.0" \
+    label.font="$FONT:Bold:17.0" \
     label.color="$ACCENT" \
     label.padding_left=6 \
     label.padding_right=6 \
