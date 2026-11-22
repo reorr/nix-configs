@@ -40,15 +40,15 @@ sketchybar --default \
   background.padding_left=2 \
   background.padding_right=2
 
-# --- left: workspaces | window app name -------------------------------------
+# --- left: workspaces | apps in the focused workspace -----------------------
 for i in 1 2 3 4 5 6 7 8 9; do
   sketchybar --add item "ws.$i" left \
     --set "ws.$i" \
       drawing=off \
       icon.drawing=off \
       label.color="$SUBTEXT" \
-      label.padding_left=7 \
-      label.padding_right=7 \
+      label.padding_left=12 \
+      label.padding_right=12 \
       background.drawing=off \
       background.color="$ACCENT" \
       click_script="omniwmctl command switch-workspace $i"
@@ -60,15 +60,25 @@ sketchybar --add item divider left \
     label="|" \
     label.color="$SURFACE" \
     label.padding_left=2 \
-    label.padding_right=6
-
-sketchybar --add item front_app left \
-  --set front_app \
-    icon.drawing=off \
-    label.padding_left=6 \
     label.padding_right=6 \
     update_freq=2 \
     script="$PLUGIN_DIR/refresh.sh"
+
+# One slot per app in the focused workspace; the focused app gets a chevron.
+for i in 1 2 3 4 5 6 7 8 9; do
+  sketchybar --add item "app.$i" left \
+    --set "app.$i" \
+      drawing=off \
+      icon=$'\xef\x81\x94' \
+      icon.drawing=off \
+      icon.font="$NERD_FONT:Bold:14.0" \
+      icon.color="$ACCENT" \
+      icon.padding_left=4 \
+      icon.padding_right=6 \
+      label.color="$SUBTEXT" \
+      label.padding_left=4 \
+      label.padding_right=4
+done
 
 # --- right: battery | wifi | time | date ------------------------------------
 # Added right-to-left, so visual order is battery, wifi, time, date.
